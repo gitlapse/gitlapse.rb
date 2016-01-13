@@ -26,9 +26,9 @@ module Gitlapse
 	  if requested_path == path
 	    blob 	= @repo.lookup(oid)
 	    content 	= blob.content 
-	    p "path	: #{path}"
-	    p "oid	: #{oid}"
-	    p "content	: #{content}"
+	    #p "path	: #{path}"
+	    #p "oid	: #{oid}"
+	    #p "content	: #{content}"
 	    return oid, content
 	  end
 	end
