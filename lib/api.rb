@@ -46,7 +46,7 @@ module Gitlapse
       else
 	send(r[0],r[1])
 	p "Visit your lapse at: "
-	p "http://api.gitlapse.com/sample.html?#{r[0]}"
+	p "https://api.gitlapse.com/sample.html?#{r[0]}"
       end
     end
 
