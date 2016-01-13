@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require_relative './../lib/api'
+
+
+api = Gitlapse::API.new 
+api.full_lapse(ARGV[0])
+
+#`git config --global alias.sally tree`
+#`git config --global alias.sally "!zsh echo cool"`
