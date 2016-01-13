@@ -5,8 +5,8 @@ module Gitlapse
   class API 
     def initialize
       @repo = Rugged::Repository.new '.'
-      @port = "80"
-      @base_url =  "http://api.gitlapse.com:#{@port}"
+      @port = "443"
+      @base_url =  "https://api.gitlapse.com:#{@port}"
       #@port = "8080"
       #@base_url =  "http://127.0.0.1:#{@port}"
     end
