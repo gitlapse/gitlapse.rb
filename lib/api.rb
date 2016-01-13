@@ -6,7 +6,8 @@ module Gitlapse
     def initialize
       @repo = Rugged::Repository.new '.'
       @port = "443"
-      @base_url =  "https://api.gitlapse.com:#{@port}"
+      @version = "v1"
+      @base_url =  "https://api.gitlapse.com:#{@port}/#{@version}"
       #@port = "8080"
       #@base_url =  "http://127.0.0.1:#{@port}"
     end
@@ -36,7 +37,8 @@ module Gitlapse
 
     def send sha, content
       gitlapse_client = JSON.generate({:SHA => sha, :content => content})
-      response = `curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{gitlapse_client}' #{@base_url}/git/full_lapse`
+      #response = `curl -v -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{gitlapse_client}' #{@base_url}/git/full_lapse`
+      response = `curl -v -H "Origin: https://www.gitlapse.com" -H "Accept: application/json" -H "Content-type: application/json" -X POST -d '#{gitlapse_client}' #{@base_url}/git/full_lapse`
     end
 
     def full_lapse path
