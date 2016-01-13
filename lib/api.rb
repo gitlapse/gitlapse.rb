@@ -45,6 +45,8 @@ module Gitlapse
 	p 'raise error baby'
       else
 	send(r[0],r[1])
+	p "Visit your lapse at: "
+	p "http://api.gitlapse.com/sample.html?#{r[0]}"
       end
     end
 
