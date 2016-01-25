@@ -2,7 +2,11 @@ require 'rugged'
 require 'json'
 
 module Gitlapse
-  class API 
+  def self.lapses
+    Gitlapse::SDK.new
+  end
+
+  class SDK 
     def initialize
       @repo = Rugged::Repository.new '.'
       @port = "443"
